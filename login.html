@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-zoom@1.0.0"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+      <div class="login-container">
+    <div class="logo">
+      
+      <h1>Uygulama Adı</h1>
+    </div>
+    <form id="login-form">
+      <div class="input-group">
+        <label for="username">Kullanıcı Adı</label>
+        <input type="text" id="username" name="username" placeholder="Kullanıcı Adı" required>
+      </div>
+      <div class="input-group">
+        <label for="password" >Şifre</label>
+        <div class="password-field">
+          <input type="password" id="password" name="password" placeholder="Şifre" required>
+          <span id="toggle-password" class="toggle-password"></span>
+        </div>
+        <p id="capslock-warning" class="warning-message">Caps Lock açık!</p>
+      </div>
+      <button type="submit">Giriş Yap</button>
+      <p id="error-message" class="error-message">Şifre yanlış, lütfen tekrar deneyin.</p>
+    </form>
+  </div>
+  <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
