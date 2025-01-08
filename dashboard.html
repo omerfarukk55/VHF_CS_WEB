@@ -13,27 +13,34 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap"
     />
-    <link rel="stylesheet" href="dashboard.css"></link>
+    <link rel="stylesheet" href="dashboard.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="nouislider.css" rel="stylesheet">
-    <script src="nouislider.js"></script>
-    <script type="module">
-      import noUiSlider from 'nouislider/dist/nouislider.mjs';
-      </script>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.7.0/nouislider.min.css"
+    integrity="sha512..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  /><script
+    src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.7.0/nouislider.min.js"
+    integrity="sha512..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  ></script>
   </head>
   <body>
     <nav class="navbar">
       <!-- Sol kısım (Logo) -->
       <div class="navbar-left">
-        <a href="dashboard.html">
+        <a href="dashboard.html" class="active">
           <img src="./images/Tron-Logo (1).png" alt="Logo" class="logo">
         </a>
       </div>
       <!-- Sağ kısım (Şifre Değiştir ve Çıkış) -->
       <div class="navbar-right">
         <ul>
-          <li><a href="change-password.html">Şifre Değiştir</a></li>
-          <li><a href="logout.html">Çıkış</a></li>
+          <li><a href="change-password.html">Şifre Değiştir <img src="./images/reset-password.png" alt="icon" class="icon"></a></li>
+          <li><a href="logout.html">Çıkış <img src="./images/logout.png" alt="icon" class="icon"></a></li>
         </ul>
       </div>
     </nav>
@@ -58,61 +65,180 @@
         <!-- Frekans Değeri Satırı -->
         <tr>
           <td>Frekans Değeri (MHz)</td>
-          <td><input type="number" name="frequency1"></td>
-          <td><input type="number" name="frequency2"></td>
-          <td><input type="number" name="frequency3"></td>
-          <td><input type="number" name="frequency4"></td>
-          <td><input type="number" name="frequency5"></td>
-          <td><input type="number" name="frequency6"></td>
-          <td><input type="number" name="frequency7"></td>
-          <td><input type="number" name="frequency8"></td>
+          <td><input type="number" name="frequency1" id="frequency1"><i class="fas fa-wave-square">Hz</i></td>
+          <td><input type="number" name="frequency2" id="frequency2"><i class="fas fa-wave-square">Hz</i></td>
+          <td><input type="number" name="frequency3" id="frequency3"><i class="fas fa-wave-square">Hz</i></td>
+          <td><input type="number" name="frequency4" id="frequency4"><i class="fas fa-wave-square">Hz</i></td>
+          <td><input type="number" name="frequency5" id="frequency5"><i class="fas fa-wave-square">Hz</i></td>
+          <td><input type="number" name="frequency6" id="frequency6"><i class="fas fa-wave-square">Hz</i></td>
+          <td><input type="number" name="frequency7" id="frequency7"><i class="fas fa-wave-square">Hz</i></td>
+          <td><input type="number" name="frequency8" id="frequency8"><i class="fas fa-wave-square">Hz</i></td>
         </tr>
         <!-- Kanal Aç/Kapa Satırı -->
         <tr>
           <td>Kanal Aç/Kapa</td>
-          <td><input type="checkbox" name="toggle1"></td>
-          <td><input type="checkbox" name="toggle2"></td>
-          <td><input type="checkbox" name="toggle3"></td>
-          <td><input type="checkbox" name="toggle4"></td>
-          <td><input type="checkbox" name="toggle5"></td>
-          <td><input type="checkbox" name="toggle6"></td>
-          <td><input type="checkbox" name="toggle7"></td>
-          <td><input type="checkbox" name="toggle8"></td>
+          <td> 
+            <label class="switch">
+            <input type="checkbox" id="toggleSwitch" name="toggle1">
+            <span class="slider"></span>
+            </label>
+        </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" id="toggleSwitch" name="toggle2">
+              <span class="slider"></span>
+            </label>
+          </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" id="toggleSwitch" name="toggle3">
+              <span class="slider"></span>
+              </label>
+          </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" id="toggleSwitch" name="toggle4">
+              <span class="slider"></span>
+              </label>
+          </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" id="toggleSwitch" name="toggle5">
+              <span class="slider"></span>
+              </label>
+          </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" id="toggleSwitch" name="toggle6">
+              <span class="slider"></span>
+              </label>
+          </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" id="toggleSwitch" name="toggle7">
+              <span class="slider"></span>
+              </label>
+          </td>
+          <td><label class="switch">
+            <input type="checkbox" id="toggleSwitch" name="toggle8">
+            <span class="slider"></span>
+            </label>
+          </td>
         </tr>
         <!-- Filtre Seçimi Satırı -->
         <tr>
           <td>Filtre Seçimi</td>
           <td>
-            <label><input type="radio" name="filter1" value="dusukGecikme"> Düşük Gecikme</label><br>
-            <label><input type="radio" name="filter1" value="yuksekBastirma"> Yüksek Bastırma</label>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="filter1" value="dusukGecikme">
+                <span class="radio-button"></span>
+                Düşük Gecikme
+              </label>
+              <label class="custom-radio">
+              <input type="radio" name="filter1" value="yuksekBastirma">
+                <span class="radio-button"></span>
+                Yüksek Bastırma
+              </label>
+            </div>
           </td>
           <td>
-            <label><input type="radio" name="filter2" value="dusukGecikme"> Düşük Gecikme</label><br>
-            <label><input type="radio" name="filter2" value="yuksekBastirma"> Yüksek Bastırma</label>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="filter2" value="dusukGecikme">
+                <span class="radio-button"></span>
+                Düşük Gecikme
+              </label>
+              <label class="custom-radio">
+              <input type="radio" name="filter2" value="yuksekBastirma">
+                <span class="radio-button"></span>
+                Yüksek Bastırma
+              </label>
+            </div>
           </td>
           <td>
-            <label><input type="radio" name="filter3" value="dusukGecikme"> Düşük Gecikme</label><br>
-            <label><input type="radio" name="filter3" value="yuksekBastirma"> Yüksek Bastırma</label>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="filter3" value="dusukGecikme">
+                <span class="radio-button"></span>
+                Düşük Gecikme
+              </label>
+              <label class="custom-radio">
+              <input type="radio" name="filter3" value="yuksekBastirma">
+                <span class="radio-button"></span>
+                Yüksek Bastırma
+              </label>
+            </div>
           </td>
           <td>
-            <label><input type="radio" name="filter4" value="dusukGecikme"> Düşük Gecikme</label><br>
-            <label><input type="radio" name="filter4" value="yuksekBastirma"> Yüksek Bastırma</label>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="filter4" value="dusukGecikme">
+                <span class="radio-button"></span>
+                Düşük Gecikme
+              </label>
+              <label class="custom-radio">
+                <input type="radio" name="filter4" value="yuksekBastirma">
+                <span class="radio-button"></span>
+                Yüksek Bastırma
+              </label>
+            </div>
           </td>
           <td>
-            <label><input type="radio" name="filter5" value="dusukGecikme"> Düşük Gecikme</label><br>
-            <label><input type="radio" name="filter5" value="yuksekBastirma"> Yüksek Bastırma</label>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="filter5" value="dusukGecikme">
+                <span class="radio-button"></span>
+                Düşük Gecikme
+              </label>
+              <label class="custom-radio">
+              <input type="radio" name="filter5" value="yuksekBastirma">
+                <span class="radio-button"></span>
+                Yüksek Bastırma
+              </label>
+            </div>
           </td>
           <td>
-            <label><input type="radio" name="filter6" value="dusukGecikme"> Düşük Gecikme</label><br>
-            <label><input type="radio" name="filter6" value="yuksekBastirma"> Yüksek Bastırma</label>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="filter6" value="dusukGecikme">
+                <span class="radio-button"></span>
+                Düşük Gecikme
+              </label>
+              <label class="custom-radio">
+              <input type="radio" name="filter6" value="yuksekBastirma">
+                <span class="radio-button"></span>
+                Yüksek Bastırma
+              </label>
+            </div>
           </td>
           <td>
-            <label><input type="radio" name="filter7" value="dusukGecikme"> Düşük Gecikme</label><br>
-            <label><input type="radio" name="filter7" value="yuksekBastirma"> Yüksek Bastırma</label>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="filter7" value="dusukGecikme">
+                <span class="radio-button"></span>
+                Düşük Gecikme
+              </label>
+              <label class="custom-radio">
+              <input type="radio" name="filter7" value="yuksekBastirma">
+                <span class="radio-button"></span>
+                Yüksek Bastırma
+              </label>
+            </div>
           </td>
           <td>
-            <label><input type="radio" name="filter8" value="dusukGecikme"> Düşük Gecikme</label><br>
-            <label><input type="radio" name="filter8" value="yuksekBastirma"> Yüksek Bastırma</label>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="filter8" value="dusukGecikme">
+                <span class="radio-button"></span>
+                Düşük Gecikme
+              </label>
+              <label class="custom-radio">
+              <input type="radio" name="filter8" value="yuksekBastirma">
+                <span class="radio-button"></span>
+                Yüksek Bastırma
+              </label>
+            </div>
           </td>
           <!-- Diğer kanallar için de benzer şekilde -->
           <!-- ... -->
@@ -121,36 +247,36 @@
         <tr>
           <td>Kazanç (dB)</td>
           <td>
-            <input type="range" name="gain1" min="60" max="90" value="75" oninput="updateGainValue(1)">
+            <div id="gain-slider1" class="sliders"></div>
             <span id="gain-value1">75</span>
           </td>
           <td>
-            <input type="range" name="gain2" min="60" max="90" value="75" oninput="updateGainValue(2)">
+            <div id="gain-slider2" class="sliders"></div>
             <span id="gain-value2">75</span>
           </td>
           <td>
-            <input type="range" name="gain3" min="60" max="90" value="75" oninput="updateGainValue(1)">
-            <span id="gain-value1">75</span>
+            <div id="gain-slider3" class="sliders"></div>
+            <span id="gain-value3">75</span>
           </td>
           <td>
-            <input type="range" name="gain4" min="60" max="90" value="75" oninput="updateGainValue(2)">
-            <span id="gain-value2">75</span>
+            <div id="gain-slider4" class="sliders"></div>
+            <span id="gain-value4">75</span>
           </td>
           <td>
-            <input type="range" name="gain5" min="60" max="90" value="75" oninput="updateGainValue(1)">
-            <span id="gain-value1">75</span>
+            <div id="gain-slider5" class="sliders"></div>
+            <span id="gain-value5">75</span>
           </td>
           <td>
-            <input type="range" name="gain6" min="60" max="90" value="75" oninput="updateGainValue(2)">
-            <span id="gain-value2">75</span>
+            <div id="gain-slider6" class="sliders"></div>
+            <span id="gain-value6">75</span>
           </td>
           <td>
-            <input type="range" name="gain7" min="60" max="90" value="75" oninput="updateGainValue(1)">
-            <span id="gain-value1">75</span>
+            <div id="gain-slider7" class="sliders"></div>
+            <span id="gain-value7">75</span>
           </td>
           <td>
-            <input type="range" name="gain8" min="60" max="90" value="75" oninput="updateGainValue(2)">
-            <span id="gain-value2">75</span>
+            <div id="gain-slider8" class="sliders"></div>
+            <span id="gain-value8">75</span>
           </td>
           <!-- ... -->
         </tr>
@@ -158,36 +284,36 @@
         <tr >
           <td>Squelch (dBm)</td>
           <td>
-            <input type="range" name="squelch1" min="-120" max="-108" value="-114" oninput="updateSquelchValue(1)">
+            <div id="squelch-slider1"class="sliders"></div>
             <span id="squelch-value1">-114</span>
           </td>
           <td>
-            <input type="range" name="squelch2" min="-120" max="-108" value="-114" oninput="updateSquelchValue(2)">
+            <div id="squelch-slider2"class="sliders"></div>
             <span id="squelch-value2">-114</span>
           </td>
           <td>
-            <input type="range" name="squelch3" min="-120" max="-108" value="-114" oninput="updateSquelchValue(2)">
-            <span id="squelch-value2">-114</span>
+            <div id="squelch-slider3"class="sliders"></div>
+            <span id="squelch-value3">-114</span>
           </td>
           <td>
-            <input type="range" name="squelch4" min="-120" max="-108" value="-114" oninput="updateSquelchValue(2)">
-            <span id="squelch-value2">-114</span>
+            <div id="squelch-slider4"class="sliders"></div>
+            <span id="squelch-value4">-114</span>
           </td>
           <td>
-            <input type="range" name="squelch5" min="-120" max="-108" value="-114" oninput="updateSquelchValue(2)">
-            <span id="squelch-value2">-114</span>
+            <div id="squelch-slider5" class="sliders"></div>
+            <span id="squelch-value5">-114</span>
           </td>
           <td>
-            <input type="range" name="squelch6" min="-120" max="-108" value="-114" oninput="updateSquelchValue(2)">
-            <span id="squelch-value2">-114</span>
+            <div id="squelch-slider6" class="sliders"></div>
+            <span id="squelch-value6">-114</span>
           </td>
           <td>
-            <input type="range" name="squelch7" min="-120" max="-108" value="-114" oninput="updateSquelchValue(2)">
-            <span id="squelch-value2">-114</span>
+            <div id="squelch-slider7" class="sliders"></div>
+            <span id="squelch-value7">-114</span>
           </td>
           <td>
-            <input type="range" name="squelch8" min="-120" max="-108" value="-114" oninput="updateSquelchValue(2)">
-            <span id="squelch-value2">-114</span>
+            <div id="squelch-slider8" class="sliders"></div>
+            <span id="squelch-value8">-114</span>
           </td>
           <!-- ... -->
         </tr>
@@ -207,7 +333,301 @@
       </tbody>
     </table>
   </div>
+  
+  <div class="ButtonContainer">
+    <button id="apply-settings">Ayarla</button>
+    <button id="zero-settings">Sıfırla</button>
+    </div>
+  <!--
+  -->
+    <h2 style="text-align:center;width:100%; padding: 5px 35px 10px 55px;">Downlink </h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th class="chanel">Özellikler</th>
+            <!-- Kanal Başlıkları -->
+            <th class="chanel">Kanal 1</th>
+            <th class="chanel">Kanal 2</th>
+            <th class="chanel">Kanal 3</th>
+            <th class="chanel">Kanal 4</th>
+            <th class="chanel">Kanal 5</th>
+            <th class="chanel">Kanal 6</th>
+            <th class="chanel">Kanal 7</th>
+            <th class="chanel">Kanal 8</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Frekans Değeri (MHz)</td>
+            <td><input type="number" name="frequency1" id="frequency1"><i class="fas fa-wave-square">Hz</i></td>
+            <td><input type="number" name="frequency2" id="frequency2"><i class="fas fa-wave-square">Hz</i></td>
+            <td><input type="number" name="frequency3" id="frequency3"><i class="fas fa-wave-square">Hz</i></td>
+            <td><input type="number" name="frequency4" id="frequency4"><i class="fas fa-wave-square">Hz</i></td>
+            <td><input type="number" name="frequency5" id="frequency5"><i class="fas fa-wave-square">Hz</i></td>
+            <td><input type="number" name="frequency6" id="frequency6"><i class="fas fa-wave-square">Hz</i></td>
+            <td><input type="number" name="frequency7" id="frequency7"><i class="fas fa-wave-square">Hz</i></td>
+            <td><input type="number" name="frequency8" id="frequency8"><i class="fas fa-wave-square">Hz</i></td>
+          </tr>
+        <tr>
+          <td>Kanal Aç/Kapa</td>
+          <td> 
+            <label class="switch">
+            <input type="checkbox" id="toggleSwitch" name="toggle1">
+            <span class="slider"></span>
+            </label>
+        </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" id="toggleSwitch" name="toggle2">
+              <span class="slider"></span>
+            </label>
+          </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" id="toggleSwitch" name="toggle3">
+              <span class="slider"></span>
+              </label>
+          </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" id="toggleSwitch" name="toggle4">
+              <span class="slider"></span>
+              </label>
+          </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" id="toggleSwitch" name="toggle5">
+              <span class="slider"></span>
+              </label>
+          </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" id="toggleSwitch" name="toggle6">
+              <span class="slider"></span>
+              </label>
+          </td>
+          <td>
+            <label class="switch">
+              <input type="checkbox" id="toggleSwitch" name="toggle7">
+              <span class="slider"></span>
+              </label>
+          </td>
+          <td><label class="switch">
+            <input type="checkbox" id="toggleSwitch" name="toggle8">
+            <span class="slider"></span>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>Filtre Seçimi</td>
+          <td>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="filter1" value="dusukGecikme">
+                <span class="radio-button"></span>
+                Düşük Gecikme
+              </label>
+              <label class="custom-radio">
+              <input type="radio" name="filter1" value="yuksekBastirma">
+                <span class="radio-button"></span>
+                Yüksek Bastırma
+              </label>
+            </div>
+          </td>
+          <td>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="filter2" value="dusukGecikme">
+                <span class="radio-button"></span>
+                Düşük Gecikme
+              </label>
+              <label class="custom-radio">
+              <input type="radio" name="filter2" value="yuksekBastirma">
+                <span class="radio-button"></span>
+                Yüksek Bastırma
+              </label>
+            </div>
+          </td>
+          <td>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="filter3" value="dusukGecikme">
+                <span class="radio-button"></span>
+                Düşük Gecikme
+              </label>
+              <label class="custom-radio">
+              <input type="radio" name="filter3" value="yuksekBastirma">
+                <span class="radio-button"></span>
+                Yüksek Bastırma
+              </label>
+            </div>
+          </td>
+          <td>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="filter4" value="dusukGecikme">
+                <span class="radio-button"></span>
+                Düşük Gecikme
+              </label>
+              <label class="custom-radio">
+                <input type="radio" name="filter4" value="yuksekBastirma">
+                <span class="radio-button"></span>
+                Yüksek Bastırma
+              </label>
+            </div>
+          </td>
+          <td>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="filter5" value="dusukGecikme">
+                <span class="radio-button"></span>
+                Düşük Gecikme
+              </label>
+              <label class="custom-radio">
+              <input type="radio" name="filter5" value="yuksekBastirma">
+                <span class="radio-button"></span>
+                Yüksek Bastırma
+              </label>
+            </div>
+          </td>
+          <td>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="filter6" value="dusukGecikme">
+                <span class="radio-button"></span>
+                Düşük Gecikme
+              </label>
+              <label class="custom-radio">
+              <input type="radio" name="filter6" value="yuksekBastirma">
+                <span class="radio-button"></span>
+                Yüksek Bastırma
+              </label>
+            </div>
+          </td>
+          <td>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="filter7" value="dusukGecikme">
+                <span class="radio-button"></span>
+                Düşük Gecikme
+              </label>
+              <label class="custom-radio">
+              <input type="radio" name="filter7" value="yuksekBastirma">
+                <span class="radio-button"></span>
+                Yüksek Bastırma
+              </label>
+            </div>
+          </td>
+          <td>
+            <div class="radio-group">
+              <label class="custom-radio">
+                <input type="radio" name="filter8" value="dusukGecikme">
+                <span class="radio-button"></span>
+                Düşük Gecikme
+              </label>
+              <label class="custom-radio">
+              <input type="radio" name="filter8" value="yuksekBastirma">
+                <span class="radio-button"></span>
+                Yüksek Bastırma
+              </label>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Kazanç (dB)</td>
+          <td>
+            <div id="downlink-gain-slider1" class="sliders"></div>
+            <span id="downlink-gain-value1">75</span>
+          </td>
+          <td>
+            <div id="downlink-gain-slider2" class="sliders"></div>
+            <span id="downlink-gain-value2">75</span>
+          </td>
+          <td>
+            <div id="downlink-gain-slider3" class="sliders"></div>
+            <span id="downlink-gain-value3">75</span>
+          </td>
+          <td>
+            <div id="downlink-gain-slider4" class="sliders"></div>
+            <span id="downlink-gain-value4">75</span>
+          </td>
+          <td>
+            <div id="downlink-gain-slider5" class="sliders"></div>
+            <span id="downlink-gain-value5">75</span>
+          </td>
+          <td>
+            <div id="downlink-gain-slider6" class="sliders"></div>
+            <span id="downlink-gain-value6">75</span>
+          </td>
+          <td>
+            <div id="downlink-gain-slider7" class="sliders"></div>
+            <span id="downlink-gain-value7">75</span>
+          </td>
+          <td>
+            <div id="downlink-gain-slider8" class="sliders"></div>
+            <span id="downlink-gain-value8">75</span>
+          </td>
+        </tr>
+      
+        <tr >
+          <td>Squelch (dBm)</td>
+          <td>
+            <div id="downlink-squelch-slider1"class="sliders"></div>
+            <span id="downlink-squelch-value1">-114</span>
+          </td>
+          <td>
+            <div id="downlink-squelch-slider2"class="sliders"></div>
+            <span id="downlink-squelch-value2">-114</span>
+          </td>
+          <td>
+            <div id="downlink-squelch-slider3"class="sliders"></div>
+            <span id="downlink-squelch-value3">-114</span>
+          </td>
+          <td>
+            <div id="downlink-squelch-slider4"class="sliders"></div>
+            <span id="downlink-squelch-value4">-114</span>
+          </td>
+          <td>
+            <div id="downlink-squelch-slider5" class="sliders"></div>
+            <span id="downlink-squelch-value5">-114</span>
+          </td>
+          <td>
+            <div id="downlink-squelch-slider6" class="sliders"></div>
+            <span id="downlink-squelch-value6">-114</span>
+          </td>
+          <td>
+            <div id="downlink-squelch-slider7" class="sliders"></div>
+            <span id="downlink-squelch-value7">-114</span>
+          </td>
+          <td>
+            <div id="downlink-squelch-slider8" class="sliders"></div>
+            <span id="downlink-squelch-value8">-114</span>
+          </td>
+        </tr>
+        <tr>
+          <td>Kanal Giriş Gücü (dBm)</td>
+          <td><span id="input-power1">--</span></td>
+          <td><span id="input-power2">--</span></td>
+          <td><span id="input-power3">--</span></td>
+          <td><span id="input-power4">--</span></td>
+          <td><span id="input-power5">--</span></td>
+          <td><span id="input-power6">--</span></td>
+          <td><span id="input-power7">--</span></td>
+          <td><span id="input-power8">--</span></td>
+         
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ButtonContainer">
   <button id="apply-settings">Ayarla</button>
-        <script src="dashboard.js"></script>
+  <button id="zero-settings">Sıfırlama</button>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/14.7.0/nouislider.min.js"></script>
+
+  <script src="dashboard.js"></script>
   </body>
 </html>
