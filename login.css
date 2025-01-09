@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #81ecec, #6c5ce7);
+    background: linear-gradient(135deg, #3aaa06a9, #018751);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,10 +21,17 @@ body {
     max-width: 80%;
   }
   
-  .logo h1 {
-    text-align: center;
-    color: #6c5ce7;
-    margin-bottom: 30px;
+  
+  .logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .logo img {
+    height: 50px;
+    color: #11420199;
+    position: relative;
   }
   
   .input-group {
@@ -47,12 +54,12 @@ body {
   }
   
   .input-group input:focus {
-    border-color: #6c5ce7;
+    border-color: #24a448;
     outline: none;
-    box-shadow: 0 0 5px rgba(108, 92, 231, 0.5);
+    box-shadow: 0 0 5px rgba(44, 135, 55, 0.5);
   }
   input:hover {
-    border-color: #a29bfe;
+    border-color: #01ab3c;
   }
   .password-field {
     position: relative;
@@ -73,7 +80,7 @@ body {
   button[type="submit"] {
     width: 100%;
     padding: 15px;
-    background-color: #6c5ce7;
+    background-color: #468b83;
     border: none;
     border-radius: 5px;
     color: #ffffff;
@@ -83,7 +90,7 @@ body {
   }
 
   button[type="submit"]:hover {
-    background-color: #5a4cd0;
+    background-color: #1f4528;
   }
   
   .warning-message,

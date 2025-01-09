@@ -1,4 +1,16 @@
-// Sayfa Yüklendiğinde Çalışacak Fonksiyonlar
+
+const currentPage = window.location.pathname.split('/').pop().split('.').shift();
+
+  // Navbar'daki tüm linkleri seç
+  const navLinks = document.querySelectorAll('.navbar-right a');
+
+  navLinks.forEach(link => {
+    const page = link.getAttribute('data-page');
+    if (page === currentPage) {
+      link.classList.add('active');
+    }
+  });
+  // Sayfa Yüklendiğinde Çalışacak Fonksiyonlar
 document.addEventListener("DOMContentLoaded", () => {
   // Kazanç ve Squelch Slider'larını Oluşturma
   for (let i = 1; i <= 8; i++) {

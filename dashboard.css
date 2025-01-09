@@ -52,7 +52,10 @@ h1 {
   transition: color 0.3s;
 }
 .navbar-right a.active {
-  border-bottom: 2px solid white;
+  color: #fff;
+  background-color: rgb(47, 97, 57);
+  border-radius: 5px;
+  padding: 19px 19px;
 }
 .navbar-left,
 .navbar-right {
@@ -96,8 +99,8 @@ input[type="number"] {
 }
 
 input[type="number"]:focus {
-  border-color: #6c5ce7;
-  box-shadow: 0 0 5px rgba(108, 92, 231, 0.5);
+  border-color: #5c825c;
+  box-shadow: 0 0 5px rgba(0, 198, 132, 0.5);
   outline: none;
 }
 .input-icon {
